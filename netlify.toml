@@ -1,4 +1,4 @@
-[[build]]
+[build]
   functions = "functions"
 
 [[redirects]]
