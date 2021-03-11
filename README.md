@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b4958a6a-2204-4e4c-bfc1-64ba324faaa4/deploy-status)](https://app.netlify.com/sites/streamsquads/deploys)
+
 # streamsquads
 
 ## Build Setup
