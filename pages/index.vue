@@ -33,11 +33,13 @@
           GitHub
         </a>
       </div>
+      <vue-hcaptcha sitekey="28695cb0-a2f6-4dfd-9589-d8574b2115c9"></vue-hcaptcha>
     </div>
   </div>
 </template>
 
 <script>
+import VueHcaptcha from '@hcaptcha/vue-hcaptcha'
 import Logo from '~/components/Logo.vue'
 import VuesaxLogo from '~/components/VuesaxLogo.vue'
 
@@ -45,6 +47,7 @@ export default {
   components: {
     Logo,
     VuesaxLogo,
+    VueHcaptcha,
   },
 }
 </script>
