@@ -1,6 +1,6 @@
 export default {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
-  ssr: false,
+  ssr: true,
 
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
@@ -14,6 +14,7 @@ export default {
       { hid: 'description', name: 'description', content: '' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: [{ hid: 'fontawesome', src: 'https://kit.fontawesome.com/6aab57228e.js' }],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
@@ -42,6 +43,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/auth-next',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
     [
@@ -69,6 +71,25 @@ export default {
     ],
     'nuxt-feature-toggle',
   ],
+
+  router: {
+    middleware: ['auth'],
+  },
+
+  auth: {
+    redirect: {
+      login: '/', // redirect user when not connected
+      callback: '/',
+    },
+    strategies: {
+      local: false,
+      auth0: {
+        domain: process.env.Auth0Domain,
+        client_id: process.env.Auth0ClientID,
+        audience: process.env.Auth0Audience,
+      },
+    },
+  },
 
   publicRuntimeConfig: {
     featureToggle: {

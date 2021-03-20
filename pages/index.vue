@@ -32,6 +32,8 @@
         <a href="https://github.com/nuxt/nuxt.js" target="_blank" rel="noopener noreferrer" class="button--grey">
           GitHub
         </a>
+        <a v-if="$auth.loggedIn" @click="$auth.logout()" class="button--grey">Sign Off</a>
+        <a v-else @click="$auth.loginWith('auth0')" class="button--green">Sign In</a>
       </div>
       <vue-hcaptcha sitekey="28695cb0-a2f6-4dfd-9589-d8574b2115c9"></vue-hcaptcha>
     </div>
